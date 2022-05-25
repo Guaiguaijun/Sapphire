@@ -45,46 +45,46 @@ namespace Sapphire::Network::Packets
   {
 
     // Old Definitions that need to be here to compile
-    ActorFreeSpawn = 0x00AD, // updated 6.11
+    ActorFreeSpawn = 0x0111, // updated 6.11a (Experimental)
     ChatBanned = 0xF06B,
-    InitSearchInfo = 0x010D, // updated 6.11
+    InitSearchInfo = 0x0284, // updated 6.11a (Experimental)
 
     // Definitions that needed to be "changed" (with an F in front) to prevent conflicts
 
     /////////////////////////////////////////////////
 
-    Ping = 0x01F4, // updated 6.11
-    Init = 0x0104, // updated 6.11
+    Ping = 0x017A, // updated 6.11a
+    Init = 0x0075, // updated 6.11a
 
-    InitZone = 0x01F5, // Updated 6.11
-    PrepareZoning = 0x01CF, // Updated 6.11
+    InitZone = 0x0086, // Updated 6.11a (Experimental)
+    PrepareZoning = 0x02A0, // Updated 6.11a (Experimental)
 
-    EffectResult = 0x0309, // Updated 6.11
+    EffectResult = 0x012A, // Updated 6.11a (Experimental)
     EffectResultBasic = 0x00A8, // updated 6.11
 
-    ActorControl = 0x016F, // Updated 6.11
-    ActorControlSelf = 0x03AE, // Updated 6.11
-    ActorControlTarget = 0x01B2, // Updated 6.11
-    ActorCast = 0x0163, // Updated 6.11
-    ActorMove = 0x0397, // Updated 6.11
-    ActorSetPos = 0x0317, // Updated 6.11
-    ActorGauge = 0x02A7, // Updated 6.11
+    ActorControl = 0x024B, // Updated 6.11a (Experimental)
+    ActorControlSelf = 0x0334, // Updated 6.11a (Experimental)
+    ActorControlTarget = 0x0370, // Updated 6.11a (Experimental)
+    ActorCast = 0x03DF, // Updated 6.11a (Experimental)
+    ActorMove = 0x0132, // Updated 6.11a (Experimental)
+    ActorSetPos = 0x01D9, // Updated 6.11a (Experimental)
+    ActorGauge = 0x01C2, // Updated 6.11a (Experimental)
 
-    EventPlay = 0x313,    // Updated for 6.11
-    EventPlay4 = 0x36D,   // Updated for 6.11
-    EventPlay8 = 0x364,   // Updated for 6.11
-    EventPlay16 = 0x9E,   // Updated for 6.11
-    EventPlay32 = 0x3C8,  // Updated for 6.11
-    EventPlay64 = 0x16B,  // Updated for 6.11
-    EventPlay128 = 0x2FB, // Updated for 6.11
-    EventPlay255 = 0xD8,  // Updated for 6.11
-    EventStart = 0x0217, // Updated 6.11
-    EventFinish = 0x0096, // Updated 6.11
+    EventPlay = 0x085,    // Updated for 6.11a (Experimental)
+    EventPlay4 = 0x2F4,   // Updated for 6.11a (Experimental)
+    EventPlay8 = 0x176,   // Updated for 6.11a (Experimental)
+    EventPlay16 = 0x2D4,   // Updated for 6.11a (Experimental)
+    EventPlay32 = 0x2FF,  // Updated for 6.11a (Experimental)
+    EventPlay64 = 0x289,  // Updated for 6.11a (Experimental)
+    EventPlay128 = 0x3A5, // Updated for 6.11a (Experimental)
+    EventPlay255 = 0xD9,  // Updated for 6.11a (Experimental)
+    EventStart = 0x0156, // Updated 6.11a (Experimental)
+    EventFinish = 0x026B, // Updated 6.11a (Experimental)
 
-    DirectorVars = 0x0306, // updated 6.11 or 0xC6 from my findings
+    DirectorVars = 0x00F0, // updated 6.11a (Experimental)
     SomeDirectorUnk1 = 0x00DB, // updated 6.11 or 0xCC, 0x122, 0x1AD, or 0x24F
     SomeDirectorUnk2 = 0xF0C1, // updated 5.18
-    SomeDirectorUnk4 = 0x01AD, // Updated 6.11
+    SomeDirectorUnk4 = 0xF1AD, // Updated 6.11 (F prepended to prevent conflicts with Weather Change)
     SomeDirectorUnk8 = 0x028A, // updated 5.18
     SomeDirectorUnk16 = 0x028C, // updated 5.18
     DirectorPopUp = 0x03DF, // updated 5.58 hotfix
@@ -94,63 +94,63 @@ namespace Sapphire::Network::Packets
 
     ///////////////////////////////////////////////////
 
-    PlayerSetup = 0x0312, // Updated 6.11
-    PlayerStats = 0x0370, // Updated 6.11
-    PlayerSpawn = 0x018F, // Updated 6.11
-    PlayerClassInfo = 0x0271, // updated 6.11
+    PlayerSetup = 0x03CB, // Updated 6.11a (Experimental)
+    PlayerStats = 0x036E, // Updated 6.11a (Experimental)
+    PlayerSpawn = 0x0336, // Updated 6.11a (Experimental)
+    PlayerClassInfo = 0x00CB, // updated 6.11a (Experimental)
 
 
-    UpdateHpMpTp = 0x028B, // Updated 6.11
-    UpdateClassInfo = 0x00D4, // Updated 6.11
+    UpdateHpMpTp = 0x0231, // Updated 6.11a (Experimental)
+    UpdateClassInfo = 0x02D1, // Updated 6.11a (Experimental)
 
-    UpdateSearchInfo = 0x0334, // Updated 6.11
-    ExamineSearchInfo = 0x022B, // Updated 6.11
+    UpdateSearchInfo = 0x0251, // Updated 6.11a (Experimental)
+    ExamineSearchInfo = 0x0236, // Updated 6.11a (Experimental)
 
     // daily quest info -> without them sent,  login will take longer...
-    DailyQuests = 0x0296, // updated 6.11
-    DailyQuestRepeatFlags = 0x00C0, // updated 6.11
+    DailyQuests = 0x029D, // updated 6.11a (Experimental)
+    DailyQuestRepeatFlags = 0x0328, // updated 6.11a (Experimental)
 
 
-    Playtime = 0x009D, // Updated 6.11
-    Logout = 0x0109, // updated 6.11
+    Playtime = 0x039D, // Updated 6.11a (Experimental)
+    Logout = 0x0094, // updated 6.11a (Experimental)
 
-    CFNotify = 0x0188, // updated 6.11
-    CFMemberStatus = 0x0079,
-    CFDutyInfo = 0x0383, // updated 6.11
+    CFNotify = 0x01D2, // updated 6.11a (Experimental)
+    CFMemberStatus = 0x0286, // updated 6.11a (Experimental) [Real Iffy]
+    CFDutyInfo = 0x03A8, // updated 6.11a (Experimental)
     CFPlayerInNeed = 0xF07F,
-    CFPreferredRole = 0x02A0, // updated 6.11
-    CFCancel = 0x0354, // updated 6.11
+    CFPreferredRole = 0x0151, // updated 6.11a (Experimental)
+    CFCancel = 0x0107, // updated 6.11a (Experimental)
     SocialRequestError = 0xF0AD,
 
     CFRegistered = 0x00A9, // updated 6.08
-    SocialRequestResponse = 0x037C, // updated 6.11
-    SocialMessage = 0x0239, // updated 6.11
-    SocialMessage2 = 0x03CA, // updated 6.11
+    SocialRequestResponse = 0x0386, // updated 6.11a (Experimental)
+    SocialMessage = 0x0079, // updated 6.11a (Experimental)
+    SocialMessage2 = 0x0159, // updated 6.11a (Experimental)
     CancelAllianceForming = 0xF0C6, // updated 4.2
 
-    LogMessage = 0x0244, // updated 6.11
+    LogMessage = 0x038B, // updated 6.11a (Experimental)
 
-    Chat = 0x01C7, // updated 6.11
+    Chat = 0x009C, // updated 6.11a (Experimental)
     PartyChat = 0x0065,
 
     WorldVisitList = 0xF0FE, // added 4.5
 
-    SocialList = 0x0138, // updated 6.11
+    SocialList = 0x0183, // updated 6.11a (Experimental)
 
-    ExamineSearchComment = 0x03A3, // updated 6.11
+    ExamineSearchComment = 0x036B, // updated 6.11a (Experimental)
 
-    ServerNoticeShort = 0x015E, // updated 6.11
-    ServerNotice = 0x01FF, // updated 6.11
-    SetOnlineStatus = 0x0121, // updated 6.11
+    ServerNoticeShort = 0x00B4, // updated 6.11a (Experimental)
+    ServerNotice = 0x01CB, // updated 6.11a (Experimental)
+    SetOnlineStatus = 0x021F, // updated 6.11a (Experimental)
 
-    CountdownInitiate = 0x03CB, // updated 6.11
-    CountdownCancel = 0x00F0, // updated 6.11
+    CountdownInitiate = 0x0179, // updated 6.11a (Experimental)
+    CountdownCancel = 0x0359, // updated 6.11a (Experimental)
 
-    PlayerAddedToBlacklist = 0x027C, // updated 6.11
-    PlayerRemovedFromBlacklist = 0x0069, // updated 6.11
-    BlackList = 0x02A3, // updated 6.11
+    PlayerAddedToBlacklist = 0x033F, // updated 6.11a (Experimental)
+    PlayerRemovedFromBlacklist = 0x0149, // updated 6.11a (Experimental)
+    BlackList = 0x03AE, // updated 6.11a (Experimental)
 
-    LinkshellList = 0x010D, // updated 6.11
+    LinkshellList = 0x0284, // updated 6.11a (Experimental)
     CrossWorldLinkshellList = 0x00CD, // updated 6.11
     FellowshipList = 0x03E7, // updated 6.11
 
@@ -170,46 +170,46 @@ namespace Sapphire::Network::Packets
 
     CharaFreeCompanyTag = 0x013B, // updated 4.5
     FreeCompanyBoardMsg = 0x0276, // updated 6.11
-    FreeCompanyInfo = 0x0084, // Updated 6.11
+    FreeCompanyInfo = 0x010C, // Updated 6.11a
     FreeCompanyDialog = 0x03B8, // Updated 6.11
     ExamineFreeCompanyInfo = 0x0197, // updated 6.11
 
     FreeCompanyUpdateShortMessage = 0xF157, // added 5.0
 
-    StatusEffectList = 0x00D2, // Updated 6.11
-    EurekaStatusEffectList = 0x0182, // updated 6.11
-    BossStatusEffectList = 0x0299, // updated 6.11
-    Effect = 0x0398, // Updated 6.11
+    StatusEffectList = 0x032E, // Updated 6.11a (Experimental)
+    EurekaStatusEffectList = 0x0244, // updated 6.11a (Experimental)
+    BossStatusEffectList = 0x03B9, // updated 6.11a (Experimental)
+    Effect = 0x00B5, // Updated 6.11a (Experimental)
     AoeEffect8 = 0x0359, // Updated 6.11
     AoeEffect16 = 0x0260, // Updated 6.11
     AoeEffect24 = 0x0209, // updated 6.11
     AoeEffect32 = 0x039F, // updated 6.11
     PersistantEffect = 0x0299, // updated 6.11
 
-    GCAffiliation = 0x02B0, // updated 6.11
+    GCAffiliation = 0x0083, // updated 6.11a
 
-    NpcSpawn = 0x02B1, // Updated 6.11
-    NpcSpawn2 = 0x0083, // updated 6.11
+    NpcSpawn = 0x026D, // Updated 6.11a (Experimental)
+    NpcSpawn2 = 0x0207, // updated 6.11a (Experimental)
 
     SomeCustomiseChangePacketProbably = 0xF0CD, // added 5.18 (Prepended F to prevent conflicts)
 
-    PartyList = 0x026F, // updated 6.11
-    PartyMessage = 0x0222, // updated 6.11
+    PartyList = 0x03A2, // updated 6.11a (Experimental)
+    PartyMessage = 0x0378, // updated 6.11a (Experimental)
     HateRank = 0x01C5, // updated 6.11
     HateList = 0x024C, // updated 6.11
-    ObjectSpawn = 0x02D3, // Updated 6.11
-    ObjectDespawn = 0x024D, // updated 6.11
+    ObjectSpawn = 0x0305, // Updated 6.11a (Experimental)
+    ObjectDespawn = 0x0120, // updated 6.11a (Experimental)
     SilentSetClassJob = 0xF18E, // updated 5.0 - seems to be the case, not sure if it's actually used for anything
     ActorOwner = 0x0312, // updated 6.11
-    PlayerStateFlags = 0x0367, // updated 6.11
+    PlayerStateFlags = 0x012C, // updated 6.11a (Experimental)
 
-    CharaVisualEffect = 0x010E, // updated 6.11
+    CharaVisualEffect = 0x01A6, // updated 6.11a (Experimental)
 
-    InstanceDecorAnimation = 0x03BC, // updated 6.11
+    InstanceDecorAnimation = 0x0350, // updated 6.11a (Experimental)
 
-    ModelEquip = 0x017A, // updated 6.11
+    ModelEquip = 0x0194, // updated 6.11a (Experimental)
     Examine = 0x0305, // updated 6.11
-    CharaNameReq = 0x01E3, // updated 6.11
+    CharaNameReq = 0x0081, // updated 6.11a (Experimental)
 
     // nb: see #565 on github
     UpdateRetainerItemSalePrice = 0xF19F, // updated 5.0
@@ -218,44 +218,44 @@ namespace Sapphire::Network::Packets
 
     SetLevelSync = 0x1186, // not updated for 4.4, not sure what it is anymore
 
-    ItemInfo = 0x00E1, // updated 6.11
-    ContainerInfo = 0x035D, // Updated 6.11
-    InventoryTransactionFinish = 0x00B8, // Updated 6.11
-    InventoryTransaction = 0x009B, //updated 6.11
-    CurrencyCrystalInfo = 0x01E2,// updated 6.11
+    ItemInfo = 0x038D, // updated 6.11a
+    ContainerInfo = 0x0288, // Updated 6.11a
+    InventoryTransactionFinish = 0x0397, // Updated 6.11a
+    InventoryTransaction = 0x028F, //updated 6.11a
+    CurrencyCrystalInfo = 0x00D8,// updated 6.11a
 
-    InventoryActionAck = 0x0190, // Updated 6.11
-    UpdateInventorySlot = 0x0322, // Updated 6.11
+    InventoryActionAck = 0x014B, // Updated 6.11a
+    UpdateInventorySlot = 0x021E, // Updated 6.11a (Experimental)
 
-    HuntingLogEntry = 0x0249, // updated 6.11
+    HuntingLogEntry = 0x015A, // updated 6.11a
 
     EventContinue = 0x00B6, // updated 5.58 hotfix
 
     EventLinkshell = 0x1169,
 
-    QuestActiveList = 0x0099, // updated 6.11
-    QuestUpdate = 0x03B0, // updated 6.11
-    QuestCompleteList = 0x0310, // updated 6.11
+    QuestActiveList = 0x03CE, // updated 6.11a (Experimental)
+    QuestUpdate = 0x01DF, // updated 6.11a (Experimental)
+    QuestCompleteList = 0x0322, // updated 6.11a (Experimental)
 
-    QuestFinish = 0x039C, // updated 6.11
-    MSQTrackerComplete = 0x0261, // updated 6.11
+    QuestFinish = 0x03DD, // updated 6.11a (Experimental)
+    MSQTrackerComplete = 0x0250, // updated 6.11a (Experimental)
     MSQTrackerProgress = 0xF1CD, // updated 4.5 ? this actually looks like the two opcodes have been combined, see #474
 
     QuestMessage = 0x0220, // updated 5.58 hotfix
 
-    QuestTracker = 0x01BC, // updated 6.11
+    QuestTracker = 0x02CB, // updated 6.11a (Experimental)
 
     Mount = 0x0268, // updated 6.11
 
     CFAvailableContents = 0xF1FD, // updated 4.2
 
-    WeatherChange = 0x02C6, // updated 6.11
-    PlayerTitleList = 0x006D, // updated 6.11
-    Discovery = 0x0177, // updated 6.11
+    WeatherChange = 0x01AD, // updated 6.11a (Experimental)
+    PlayerTitleList = 0x0206, // updated 6.11a (Experimental)
+    Discovery = 0x0380, // updated 6.11a (Experimental)
 
-    EorzeaTimeOffset = 0x03B1, // updated 6.11
+    EorzeaTimeOffset = 0x030B, // updated 6.11a (Experimental)
 
-    EquipDisplayFlags = 0x0344, // updated 6.11
+    EquipDisplayFlags = 0x038C, // updated 6.11a (Experimental)
 
     MiniCactpotInit = 0x0286, // added 5.31
     ShopMessage = 0x0287, // updated 5.58 hotfix
@@ -263,31 +263,31 @@ namespace Sapphire::Network::Packets
     ResultDialog = 0x0361, // Updated 6.11
     DesynthResult = 0x035A, // Updated 6.11
 
-    LandSetInitialize = 0x03E5, // updated 6.11
-    LandUpdate = 0x00D3, // updated 6.11
-    YardObjectSpawn = 0x014B, // updated 6.11
-    HousingIndoorInitialize = 0x0246, // updated 6.11
-    LandPriceUpdate = 0x00FD, // updated 6.11
-    LandInfoSign = 0x0156, // updated 6.11
-    LandRename = 0x0343, // updated 6.11
-    HousingEstateGreeting = 0x01FE, // updated 6.11
-    HousingUpdateLandFlagsSlot = 0x006B, // updated 6.11
-    HousingLandFlags = 0x0118, // updated 6.11
-    HousingShowEstateGuestAccess = 0x025E, // updated 6.11
+    LandSetInitialize = 0x0354, // updated 6.11a (Experimental)
+    LandUpdate = 0x0069, // updated 6.11a (Experimental)
+    YardObjectSpawn = 0x0294, // updated 6.11a (Experimental)
+    HousingIndoorInitialize = 0x010A, // updated 6.11a (Experimental)
+    LandPriceUpdate = 0x03D3, // updated 6.11a (Experimental)
+    LandInfoSign = 0x0364, // updated 6.11a (Experimental)
+    LandRename = 0x01E2, // updated 6.11a (Experimental)
+    HousingEstateGreeting = 0x0335, // updated 6.11a (Experimental)
+    HousingUpdateLandFlagsSlot = 0x00D0, // updated 6.11a (Experimental)
+    HousingLandFlags = 0x0101, // updated 6.11a (Experimental)
+    HousingShowEstateGuestAccess = 0x02BA, // updated 6.11a (Experimental)
 
-    HousingObjectInitialize = 0x01B5, // updated 6.11
-    HousingInternalObjectSpawn = 0x006E, // updated 6.11
+    HousingObjectInitialize = 0x0228, // updated 6.11a (Experimental)
+    HousingInternalObjectSpawn = 0x00C3, // updated 6.11a (Experimental)
 
-    HousingWardInfo = 0x0343, // updated 6.11
-    HousingObjectMove = 0x02C4, // updated 6.11
+    HousingWardInfo = 0x01E2, // updated 6.11a (Experimental)
+    HousingObjectMove = 0x02A3, // updated 6.11a (Experimental)
 
     SharedEstateSettingsResponse = 0x006B, // updated 6.11
 
-    LandUpdateHouseName = 0x0240, // updated 6.11
+    LandUpdateHouseName = 0x036D, // updated 6.11a (Experimental)
 
-    LandSetMap = 0x03E4, // updated 6.11
+    LandSetMap = 0x01FF, // updated 6.11a (Experimental)
 
-    CeremonySetActorAppearance = 0x0241, // updated 6.11
+    CeremonySetActorAppearance = 0x0317, // updated 6.11a (Experimental)
 
     //////////////////////////////////////////////////
 
@@ -326,20 +326,20 @@ namespace Sapphire::Network::Packets
   */
   enum ClientZoneIpcType : uint16_t
   {
-    PingHandler = 0x00B6, // updated 6.11
-    InitHandler = 0x0216, // updated 6.11
-    FinishLoadingHandler = 0x0104, // updated 6.11
-    SocialListHandler = 0x0214, // updated 6.11
-    BlackListHandler = 0x0082, // updated 6.11
-    LinkshellListHandler = 0x009D, // updated 6.11
+    PingHandler = 0x0352, // updated 6.11a
+    InitHandler = 0x002C3, // updated 6.11a
+    FinishLoadingHandler = 0x0075, // updated 6.11a
+    SocialListHandler = 0x00BA, // updated 6.11a
+    BlackListHandler = 0x00E6, // updated 6.11a
+    LinkshellListHandler = 0x039D, // updated 6.11a
     MarketBoardSearch = 0x9999, // updated 5.58 hotfix
 
-    LogoutHandler = 0x02CE, // updated 6.11
+    LogoutHandler = 0x0208, // updated 6.11a (Experimental)
 
-    CancelLogout = 0x0354, // updated 6.11
+    CancelLogout = 0x0107, // updated 6.11a (Experimental)
 
-    UpdatePositionHandler = 0x0187, // Updated 6.11
-    ClientTrigger = 0x0283, // Updated 6.11
+    UpdatePositionHandler = 0x00B8, // Updated 6.11a
+    ClientTrigger = 0x0309, // Updated 6.11a (Experimental)
     ChatHandler = 0x0133, // Updated 6.11
     SetSearchInfoHandler = 0x01F0, // Updated 6.11
     MarketBoardPurchaseHandler = 0x037C, // Updated 6.11
