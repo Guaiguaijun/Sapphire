@@ -372,6 +372,7 @@ namespace Sapphire::Network::ActorControl
     ClearFieldMarkers = 0x13A,
     CameraMode = 0x13B, // param11, 1 = enable, 0 = disable
     CharaNameReq = 0x13D, // requests character name by content id
+    DyeHousingItem = 0x0192,
     HuntingLogDetails = 0x194,
 
     Timers = 0x1AB,

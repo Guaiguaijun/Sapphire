@@ -1971,6 +1971,17 @@ namespace Sapphire::Network::Packets::Server
     uint16_t unknown3;
   };
 
+  struct FFXIVIpcHousingObjectDye : FFXIVIpcBasePacket< HousingObjectDye >
+  {
+    uint8_t stain;
+    uint8_t unknown1;
+    uint16_t containerId;
+    uint16_t slotId;
+    uint16_t unknown2;
+    uint32_t unknown3;
+    uint32_t unknown4;
+  };
+
   struct FFXIVIpcHousingObjectInitialize : FFXIVIpcBasePacket< HousingObjectInitialize >
   {
     Common::LandIdent landIdent;

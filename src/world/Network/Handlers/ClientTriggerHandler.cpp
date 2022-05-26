@@ -292,6 +292,21 @@ void Sapphire::Network::GameConnection::clientTriggerHandler( const Packets::FFX
       player.setDyeingInfo( param11, param12, param2, param4 );
       break;
     }
+    case ClientTriggerType::DyeHousingItem: // Dye item
+    {
+      auto& housingMgr = Common::Service< HousingMgr >::ref();
+
+      // param11 = item to dye container
+      // param12 = item to dye slot
+      // param2 = dye bag container
+      // param4 = dye bag slot
+      player.setDyeingInfo(param11, param12, param2, param4);
+      housingMgr.dyeInteriorItem(player, static_cast<uint16_t>(param11),
+        static_cast<uint16_t>(param12), static_cast<uint16_t>(param2), static_cast<uint16_t>(param4));
+
+     
+      break;
+    }
     case ClientTriggerType::DirectorInitFinish: // Director init finish
     {
       player.getCurrentTerritory()->onInitDirector( player );

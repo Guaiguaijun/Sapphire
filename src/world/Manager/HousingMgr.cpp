@@ -1194,11 +1194,55 @@ bool Sapphire::World::Manager::HousingMgr::placeInteriorItem( Entity::Player& pl
     assert( zone );
 
     zone->spawnHousingObject( containerIdx, static_cast< uint16_t >( freeSlot ), containerId, item );
-
+     
     return true;
   }
 
   return false;
+}
+
+void Sapphire::World::Manager::HousingMgr::dyeInteriorItem(Entity::Player& player,
+  uint16_t containerID, uint16_t slotID, uint16_t dyeContainerID, uint16_t dyeSlotID)
+{
+  auto& invMgr = Service< InventoryMgr >::ref();
+
+  auto zone = std::dynamic_pointer_cast<Territory::Housing::HousingInteriorTerritory>(player.getCurrentTerritory());
+  assert(zone);
+
+  auto ident = zone->getLandIdent();
+  auto& containers = getEstateInventory(ident);
+
+  auto it = containers.find(containerID);
+  if (it == containers.end())
+    return;
+
+  auto container = it->second;
+
+
+  auto itemToDye = std::dynamic_pointer_cast<Inventory::HousingItem>(container->getItem(slotID));
+  auto dyeToUse = player.getItemAt(dyeContainerID, dyeSlotID);
+
+  if (!itemToDye || !dyeToUse) return;
+
+  uint32_t stainId = dyeToUse->getAdditionalData();
+
+  itemToDye->setStain(stainId);
+  container->setItem(static_cast<uint8_t>(slotID), itemToDye);
+
+  auto pDyeHousingItemPacket = makeZonePacket< Server::FFXIVIpcHousingObjectDye >(player.getId());
+
+  pDyeHousingItemPacket->data().stain = static_cast<uint8_t>(stainId);
+  pDyeHousingItemPacket->data().unknown1 = 0;
+  pDyeHousingItemPacket->data().containerId = containerID;
+  pDyeHousingItemPacket->data().slotId = slotID;
+  pDyeHousingItemPacket->data().unknown2 = 0;
+  pDyeHousingItemPacket->data().unknown3 = 0;
+  pDyeHousingItemPacket->data().unknown4 = 0;
+
+  player.queuePacket(pDyeHousingItemPacket);
+
+  invMgr.sendInventoryContainer(player, container);
+  invMgr.saveHousingContainer(ident, container);
 }
 
 Sapphire::Common::HousingObject Sapphire::World::Manager::HousingMgr::getYardObjectForItem( Inventory::HousingItemPtr item ) const

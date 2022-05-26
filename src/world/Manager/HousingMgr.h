@@ -167,6 +167,16 @@ namespace Sapphire::World::Manager
      */
     Common::HousingObject getYardObjectForItem( Inventory::HousingItemPtr item ) const;
 
+    void dyeInteriorItem(Entity::Player& player, uint16_t containerID, uint16_t slotID, uint16_t dyeContainerID, uint16_t dyeSlotID);
+
+    /*!
+     * @brief Creates a house and saves the minimum amount required to persist a house through restarts.
+     *
+     * Any other changes will be covered by the usual saving logic and can be safely ignored here.
+     *
+     * @param house The house to create in the house table
+     */
+
 
     void reqMoveHousingItem( Entity::Player& player, Common::LandIdent ident, uint8_t slot,
                              Common::FFXIVARR_POSITION3 pos, float rot );
@@ -266,12 +276,12 @@ namespace Sapphire::World::Manager
     bool placeInteriorItem( Entity::Player& player, Inventory::HousingItemPtr item );
 
     /*!
-     * @brief Creates a house and saves the minimum amount required to persist a house through restarts.
-     *
-     * Any other changes will be covered by the usual saving logic and can be safely ignored here.
-     *
-     * @param house The house to create in the house table
+    * @brief Processing the spawning and linking of a newly placed item for interior items
+    * @param player The player who is placing the item
+    * @param item The item that we're placing
+    * @return true if the item was placed successfully, false if there's no free spots to place it
      */
+
     void createHouse( HousePtr house ) const;
 
     /*!

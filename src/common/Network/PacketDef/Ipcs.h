@@ -84,7 +84,7 @@ namespace Sapphire::Network::Packets
     DirectorVars = 0x00F0, // updated 6.11a (Experimental)
     SomeDirectorUnk1 = 0x00DB, // updated 6.11 or 0xCC, 0x122, 0x1AD, or 0x24F
     SomeDirectorUnk2 = 0xF0C1, // updated 5.18
-    SomeDirectorUnk4 = 0xF1AD, // Updated 6.11 (F prepended to prevent conflicts with Weather Change)
+    SomeDirectorUnk4 = 0x01D4, // Updated 6.11a (Experimental)
     SomeDirectorUnk8 = 0x028A, // updated 5.18
     SomeDirectorUnk16 = 0x028C, // updated 5.18
     DirectorPopUp = 0x03DF, // updated 5.58 hotfix
@@ -141,6 +141,7 @@ namespace Sapphire::Network::Packets
 
     ServerNoticeShort = 0x00B4, // updated 6.11a (Experimental)
     ServerNotice = 0x01CB, // updated 6.11a (Experimental)
+	SystemLogMessage = 0x01D4, // updated 6.11a
     SetOnlineStatus = 0x021F, // updated 6.11a (Experimental)
 
     CountdownInitiate = 0x0179, // updated 6.11a (Experimental)
@@ -163,15 +164,17 @@ namespace Sapphire::Network::Packets
 
     MarketTaxRates = 0x01F8, // updated 5.35 hotfix
 
-    MarketBoardSearchResult = 0x0389, // Updated 6.11
-    MarketBoardItemListingCount = 0x01AC, // Updated 6.11
-    MarketBoardItemListingHistory = 0x02E5, // Updated 6.11
-    MarketBoardItemListing = 0x03AC, // Updated 6.11
+    MarketBoardSearchResult = 0x01DE, // Updated 6.11a
+    MarketBoardItemListingCount = 0x03B7, // Updated 6.11a
+    MarketBoardItemListingHistory = 0x00E1, // Updated 6.11a
+    MarketBoardItemListing = 0x039A, // Updated 6.11a
+	MarketBoardPurchase = 0x0180, // Updated 6.11a
+	ItemMarketBoardInfo = 0x00BE, // Updated 6.11a
 
     CharaFreeCompanyTag = 0x013B, // updated 4.5
     FreeCompanyBoardMsg = 0x0276, // updated 6.11
     FreeCompanyInfo = 0x010C, // Updated 6.11a
-    FreeCompanyDialog = 0x03B8, // Updated 6.11
+    FreeCompanyDialog = 0x039E, // Updated 6.11a
     ExamineFreeCompanyInfo = 0x0197, // updated 6.11
 
     FreeCompanyUpdateShortMessage = 0xF157, // added 5.0
@@ -180,10 +183,10 @@ namespace Sapphire::Network::Packets
     EurekaStatusEffectList = 0x0244, // updated 6.11a (Experimental)
     BossStatusEffectList = 0x03B9, // updated 6.11a (Experimental)
     Effect = 0x00B5, // Updated 6.11a (Experimental)
-    AoeEffect8 = 0x0359, // Updated 6.11
-    AoeEffect16 = 0x0260, // Updated 6.11
-    AoeEffect24 = 0x0209, // updated 6.11
-    AoeEffect32 = 0x039F, // updated 6.11
+    AoeEffect8 = 0x014F, // Updated 6.11a
+    AoeEffect16 = 0x01B4, // Updated 6.11a
+    AoeEffect24 = 0x03A0, // updated 6.11a
+    AoeEffect32 = 0x0168, // updated 6.11a
     PersistantEffect = 0x0299, // updated 6.11
 
     GCAffiliation = 0x0083, // updated 6.11a
@@ -214,7 +217,7 @@ namespace Sapphire::Network::Packets
     // nb: see #565 on github
     UpdateRetainerItemSalePrice = 0xF19F, // updated 5.0
     RetainerSaleHistory = 0x0320, // updated 6.11
-    RetainerInformation = 0x029B, // Updated 6.11
+    RetainerInformation = 0x035A, // Updated 6.11a
 
     SetLevelSync = 0x1186, // not updated for 4.4, not sure what it is anymore
 
@@ -229,7 +232,7 @@ namespace Sapphire::Network::Packets
 
     HuntingLogEntry = 0x015A, // updated 6.11a
 
-    EventContinue = 0x00B6, // updated 5.58 hotfix
+    EventContinue = 0x0325, // updated 6.11a (Experimental)
 
     EventLinkshell = 0x1169,
 
@@ -257,11 +260,11 @@ namespace Sapphire::Network::Packets
 
     EquipDisplayFlags = 0x038C, // updated 6.11a (Experimental)
 
-    MiniCactpotInit = 0x0286, // added 5.31
+    MiniCactpotInit = 0x03DC, // added 6.11a
     ShopMessage = 0x0287, // updated 5.58 hotfix
-    LootMessage = 0x0396, // updated 6.11
-    ResultDialog = 0x0361, // Updated 6.11
-    DesynthResult = 0x035A, // Updated 6.11
+    LootMessage = 0x00C2, // updated 6.11a
+    ResultDialog = 0x027A, // Updated 6.11a
+    DesynthResult = 0x030D, // Updated 6.11a
 
     LandSetInitialize = 0x0354, // updated 6.11a (Experimental)
     LandUpdate = 0x0069, // updated 6.11a (Experimental)
@@ -269,7 +272,7 @@ namespace Sapphire::Network::Packets
     HousingIndoorInitialize = 0x010A, // updated 6.11a (Experimental)
     LandPriceUpdate = 0x03D3, // updated 6.11a (Experimental)
     LandInfoSign = 0x0364, // updated 6.11a (Experimental)
-    LandRename = 0x01E2, // updated 6.11a (Experimental)
+    LandRename = 0x0FFF, // updated 6.11a (Experimental)
     HousingEstateGreeting = 0x0335, // updated 6.11a (Experimental)
     HousingUpdateLandFlagsSlot = 0x00D0, // updated 6.11a (Experimental)
     HousingLandFlags = 0x0101, // updated 6.11a (Experimental)
@@ -280,6 +283,7 @@ namespace Sapphire::Network::Packets
 
     HousingWardInfo = 0x01E2, // updated 6.11a (Experimental)
     HousingObjectMove = 0x02A3, // updated 6.11a (Experimental)
+	HousingObjectDye = 0x2B5, // updated 6.11a
 
     SharedEstateSettingsResponse = 0x006B, // updated 6.11
 
@@ -288,6 +292,7 @@ namespace Sapphire::Network::Packets
     LandSetMap = 0x01FF, // updated 6.11a (Experimental)
 
     CeremonySetActorAppearance = 0x0317, // updated 6.11a (Experimental)
+	PvPTeamDisbandNotice = 0x396, // updated 6.11a
 
     //////////////////////////////////////////////////
 
@@ -332,7 +337,7 @@ namespace Sapphire::Network::Packets
     SocialListHandler = 0x00BA, // updated 6.11a
     BlackListHandler = 0x00E6, // updated 6.11a
     LinkshellListHandler = 0x039D, // updated 6.11a
-    MarketBoardSearch = 0x9999, // updated 5.58 hotfix
+    MarketBoardSearch = 0x0183, // updated 6.11a
 
     LogoutHandler = 0x0208, // updated 6.11a (Experimental)
 
@@ -340,21 +345,21 @@ namespace Sapphire::Network::Packets
 
     UpdatePositionHandler = 0x00B8, // Updated 6.11a
     ClientTrigger = 0x0309, // Updated 6.11a (Experimental)
-    ChatHandler = 0x0133, // Updated 6.11
-    SetSearchInfoHandler = 0x01F0, // Updated 6.11
-    MarketBoardPurchaseHandler = 0x037C, // Updated 6.11
-    InventoryModifyHandler = 0x0350, // Updated 6.11 (Base offset: 0x0357)
-    UpdatePositionInstance = 0x031E, // Updated 6.11
-    PlaceFieldMarkerPreset = 0x0068, // Updated 6.11
-    PlaceFieldMarker = 0x028F, // Updated 6.11
-    GMCommand1 = 0x0145, // updated 6.11
+    ChatHandler = 0x01E9, // Updated 6.11a
+    SetSearchInfoHandler = 0x00E3, // Updated 6.11a
+    MarketBoardPurchaseHandler = 0x03B6, // Updated 6.11a
+    InventoryModifyHandler = 0x02BE, // Updated 6.11a
+    UpdatePositionInstance = 0x0351, // Updated 6.11a
+    PlaceFieldMarkerPreset = 0x015E, // Updated 6.11a (Experimental)
+    PlaceFieldMarker = 0x0137, // Updated 6.11a (Experimental)
+    GMCommand1 = 0x02D5, // updated 6.11a (Experimental)
 
     CFCommenceHandler = 0x007B, // updated 6.11
 
     CFCancelHandler = 0x007B, // updated 6.11
     CFRegisterDuty = 0x02B2, // updated 6.11
     CFRegisterRoulette = 0x0157, // updated 6.11
-    PlayTimeHandler = 0x012A, // updated 6.11
+    PlayTimeHandler = 0x0164, // updated 6.11a
 
     CFDutyInfoHandler = 0xF078, // updated 4.2
 
@@ -362,7 +367,7 @@ namespace Sapphire::Network::Packets
     SocialResponseHandler = 0x0129, // updated 6.11
     CreateCrossWorldLS = 0x035D, // updated 5.58 hotfix
 
-    PartyChatHandler = 0x0065, // updated 6.11
+    PartyChatHandler = 0x025A, // updated 6.11a (Experimental)
     PartySetLeaderHandler = 0x016D, // updated 6.11
     LeavePartyHandler = 0x0101, // updated 6.11
     KickPartyMemberHandler = 0x00CA, // updated 6.11
@@ -387,33 +392,33 @@ namespace Sapphire::Network::Packets
 
     ReqJoinNoviceNetwork = 0xF129, // updated 4.2 (F appended since it conflicts)
 
-    ReqCountdownInitiate = 0x03AC, // updated 6.11
-    ReqCountdownCancel = 0x0372, // updated 6.11 
+    ReqCountdownInitiate = 0x039A, // updated 6.11a (Experimental)
+    ReqCountdownCancel = 0x0144, // updated 6.11a (Experimental) 
 
     ZoneLineHandler = 0x00C3, // updated 5.58 hotfix
     DiscoveryHandler = 0x00D9, // updated 6.08
 
-    GMCommand2 = 0x00FB, // updated 6.11
+    GMCommand2 = 0x007A, // updated 6.11a (Experimental)
 
-    SkillHandler = 0x02EB, // updated 6.11
+    SkillHandler = 0x00B9, // updated 6.11a (Experimental)
     AoESkillHandler = 0x0152, // updated 5.58 hotfix
 
 
 
     InventoryEquipRecommendedItems = 0x01C9, // updated 5.58 hotfix
 
-    ReqPlaceHousingItem = 0x010B, // updated 6.11
+    ReqPlaceHousingItem = 0x02A9, // updated 6.11a
     BuildPresetHandler = 0x0223, // updated 5.58 hotfix
 
-    TalkEventHandler = 0x00A8, // updated 6.11
+    TalkEventHandler = 0x022F, // updated 6.11a
     EmoteEventHandler = 0x00B0, // updated 5.58 hotfix
     WithinRangeEventHandler = 0x02B6, // updated 5.58 hotfix
     OutOfRangeEventHandler = 0x03C5, // updated 5.58 hotfix
-    EnterTeriEventHandler = 0x02E0, // updated 6.11
+    EnterTeriEventHandler = 0x02B3, // updated 6.11a
     ShopEventHandler = 0x0384, // updated 5.58 hotfix
 
-    ReturnEventHandler = 0x028B, // updated 6.11 
-    TradeReturnEventHandler = 0x0398, // updated 6.11
+    ReturnEventHandler = 0x0231, // updated 6.11a 
+    TradeReturnEventHandler = 0x00B5, // updated 6.11a
     TradeReturnEventHandler2 = 0x0388, // updated 6.08 
 
     EventYield2Handler = 0x021D, // updated 5.58 hotfix
@@ -422,20 +427,21 @@ namespace Sapphire::Network::Packets
     LinkshellEventHandler = 0x016B, // updated 4.5
     LinkshellEventHandler1 = 0x016C, // updated 4.5
 
-    ReqEquipDisplayFlagsChange = 0x00DC, // updated 6.11
+    ReqEquipDisplayFlagsChange = 0x0177, // updated 6.11a (Experimental)
 
-    LandRenameHandler = 0x0289, // updated 6.11
-    HousingUpdateHouseGreeting = 0x0247, // updated 6.11
-    HousingUpdateObjectPosition = 0x0233, // updated 6.11
-    HousingEditExterior = 0x02B4, // updated 6.11
-    HousingEditInterior = 0x0309, // updated 6.11
+    LandRenameHandler = 0x00E7, // updated 6.11a (Experimental)
+    HousingUpdateHouseGreeting = 0x02C8, // updated 6.11a (Experimental)
+    HousingUpdateObjectPosition = 0x0316, // updated 6.11a (Experimental)
+    HousingEditExterior = 0x033A, // updated 6.11a (Experimental)
+    HousingEditInterior = 0x012A, // updated 6.11a
 
     SetSharedEstateSettings = 0x00D2, // updated 5.58 hotfix
 
     PerformNoteHandler = 0x0243, // updated 5.58 hotfix
 
     WorldInteractionHandler = 0x0274, // updated 5.58 hotfix
-    Dive = 0x0320, // updated 5.58 hotfix
+    Dive = 0x01D9, // updated 6.11a (Experimental)
+	Surface = 0x007F, // updated 6.11a (Experimental)
   };
 
   ////////////////////////////////////////////////////////////////////////////////
