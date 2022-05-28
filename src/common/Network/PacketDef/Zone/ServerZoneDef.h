@@ -1978,7 +1978,7 @@ namespace Sapphire::Network::Packets::Server
     uint16_t containerId;
     uint16_t slotId;
     uint16_t unknown2;
-    uint32_t unknown3;
+    uint32_t plotId;  // Plot ID is 0 when in the interior
     uint32_t unknown4;
   };
 

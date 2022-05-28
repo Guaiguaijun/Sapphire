@@ -301,7 +301,7 @@ void Sapphire::Network::GameConnection::clientTriggerHandler( const Packets::FFX
       // param2 = dye bag container
       // param4 = dye bag slot
       player.setDyeingInfo(param11, param12, param2, param4);
-      housingMgr.dyeInteriorItem(player, static_cast<uint16_t>(param11),
+      housingMgr.dyeHousingItem(player, static_cast<uint16_t>(param11),
         static_cast<uint16_t>(param12), static_cast<uint16_t>(param2), static_cast<uint16_t>(param4));
 
      

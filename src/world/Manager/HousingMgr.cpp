@@ -868,7 +868,9 @@ void Sapphire::World::Manager::HousingMgr::sendEstateInventory( Entity::Player& 
   if( !hasPermission( player, *targetLand, 0 ) )
     return;
 
-  auto& containers = getEstateInventory( targetLand->getLandIdent() );
+  lastOutsideLandIdent = targetLand->getLandIdent();
+
+  auto& containers = getEstateInventory( lastOutsideLandIdent );
   auto it = containers.find( inventoryType );
   if( it == containers.end() )
     return;
@@ -1201,47 +1203,16 @@ bool Sapphire::World::Manager::HousingMgr::placeInteriorItem( Entity::Player& pl
   return false;
 }
 
-void Sapphire::World::Manager::HousingMgr::dyeInteriorItem(Entity::Player& player,
+void Sapphire::World::Manager::HousingMgr::dyeHousingItem(Entity::Player& player,
   uint16_t containerID, uint16_t slotID, uint16_t dyeContainerID, uint16_t dyeSlotID)
 {
   auto& invMgr = Service< InventoryMgr >::ref();
 
-  auto zone = std::dynamic_pointer_cast<Territory::Housing::HousingInteriorTerritory>(player.getCurrentTerritory());
-  assert(zone);
-
-  auto ident = zone->getLandIdent();
-  auto& containers = getEstateInventory(ident);
-
-  auto it = containers.find(containerID);
-  if (it == containers.end())
-    return;
-
-  auto container = it->second;
-
-  uint8_t containerIdx = 0;
-  for (auto cId : m_internalPlacedItemContainers)
-  {
-    if (containerID == cId)
-      break;
-
-    containerIdx++;
-  }
-
-  auto itemToDye = std::dynamic_pointer_cast<Inventory::HousingItem>(container->getItem(slotID));
+  Sapphire::Common::LandIdent ident;
   auto dyeToUse = player.getItemAt(dyeContainerID, dyeSlotID);
-
-  if (!itemToDye || !dyeToUse) return;
-
-  auto offset = (containerIdx * 50) + slotID;
 
   // Get the color of the dye being used
   uint32_t stainID = dyeToUse->getAdditionalData();
-
-  // Set the stain of the housing item
-  itemToDye->setStain(stainID);
-  container->setItem(static_cast<uint8_t>(slotID), itemToDye);
-
-  zone->updateHousingObjectDye(offset, stainID);
 
   // Update the color of the object on your screen (Doesn't affect any screens afterward)
   auto pDyeHousingItemPacket = makeZonePacket< Server::FFXIVIpcHousingObjectDye >(player.getId());
@@ -1251,8 +1222,81 @@ void Sapphire::World::Manager::HousingMgr::dyeInteriorItem(Entity::Player& playe
   pDyeHousingItemPacket->data().containerId = containerID;
   pDyeHousingItemPacket->data().slotId = slotID;
   pDyeHousingItemPacket->data().unknown2 = 0;
-  pDyeHousingItemPacket->data().unknown3 = 0;
   pDyeHousingItemPacket->data().unknown4 = 0;
+
+  ItemContainerPtr container;
+  Sapphire::ItemPtr itemToDye;
+
+  if (auto terri = std::dynamic_pointer_cast<Territory::Housing::HousingInteriorTerritory>(
+    player.getCurrentTerritory()))
+  {
+    assert(terri);
+
+    pDyeHousingItemPacket->data().plotId = 0;
+
+    ident = terri->getLandIdent();
+    auto& containers = getEstateInventory(ident);
+
+    auto it = containers.find(containerID);
+    if (it == containers.end())
+      return;
+
+    container = it->second;
+
+    uint8_t containerIdx = 0;
+    for (auto cId : m_internalPlacedItemContainers)
+    {
+      if (containerID == cId)
+        break;
+
+      containerIdx++;
+    }
+
+    itemToDye = std::dynamic_pointer_cast<Inventory::HousingItem>(container->getItem(slotID));
+
+    if (!itemToDye || !dyeToUse) return;
+
+    // Set the stain of the housing item
+    itemToDye->setStain(stainID);
+    container->setItem(static_cast<uint8_t>(slotID), itemToDye);
+
+    auto offset = (containerIdx * 50) + slotID;
+
+    terri->updateHousingObjectDye(offset, stainID);
+  }
+  else if (auto terri = std::dynamic_pointer_cast<HousingZone>(player.getCurrentTerritory()))
+  {
+    assert(terri);
+
+    // This variable is dirty because the client doesn't give the landID
+    // But I assume you have to have the estate inventory sent FIRST (requiring the client trigger as a prereq)
+    // so I just saved the last identifier that was used as a "global" in the Housing Manager
+    // This however sucks if there is MORE THAN ONE PLAYER. But it works for my purposes LMFAO
+    ident = lastOutsideLandIdent;
+    auto& containers = getEstateInventory(ident);
+    auto it = containers.find(InventoryType::HousingExteriorPlacedItems);
+    if (it == containers.end())
+      return;
+
+    container = it->second;
+
+    itemToDye = std::dynamic_pointer_cast<Inventory::HousingItem>(container->getItem(slotID));
+
+    if (!itemToDye || !dyeToUse) return;
+
+    // Set the stain of the housing item
+    itemToDye->setStain(stainID);
+    container->setItem(static_cast<uint8_t>(slotID), itemToDye);
+
+    terri->updateYardObjects(ident);
+
+    // Unknown3 is 12 when outside for some reason for the Hyousing Object Dye packet?er
+    pDyeHousingItemPacket->data().plotId = ident.landId;
+  }
+  else
+  {
+    return;
+  }
 
   player.queuePacket(pDyeHousingItemPacket);
 

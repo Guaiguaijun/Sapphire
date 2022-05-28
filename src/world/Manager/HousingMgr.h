@@ -167,7 +167,7 @@ namespace Sapphire::World::Manager
      */
     Common::HousingObject getYardObjectForItem( Inventory::HousingItemPtr item ) const;
 
-    void dyeInteriorItem(Entity::Player& player, uint16_t containerID, uint16_t slotID, uint16_t dyeContainerID, uint16_t dyeSlotID);
+    void dyeHousingItem(Entity::Player& player, uint16_t containerID, uint16_t slotID, uint16_t dyeContainerID, uint16_t dyeSlotID);
 
     /*!
      * @brief Creates a house and saves the minimum amount required to persist a house through restarts.
@@ -325,6 +325,8 @@ namespace Sapphire::World::Manager
     Inventory::InventoryTypeList m_internalStoreroomContainers;
 
     std::array< std::pair< Common::InventoryType, Common::InventoryType >, 8 > m_containerMap;
+
+    Common::LandIdent lastOutsideLandIdent;
 
   };
 
