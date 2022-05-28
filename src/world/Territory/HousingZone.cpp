@@ -352,6 +352,7 @@ void Sapphire::HousingZone::spawnYardObject( uint8_t landId, uint16_t slotId, In
 
   obj.itemId = item.getAdditionalData();
   obj.rotation = item.getRot();
+  obj.stain = item.getStain();
 
   obj.pos = item.getPos();
 

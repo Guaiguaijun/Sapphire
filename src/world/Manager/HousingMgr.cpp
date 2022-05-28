@@ -1218,20 +1218,35 @@ void Sapphire::World::Manager::HousingMgr::dyeInteriorItem(Entity::Player& playe
 
   auto container = it->second;
 
+  uint8_t containerIdx = 0;
+  for (auto cId : m_internalPlacedItemContainers)
+  {
+    if (containerID == cId)
+      break;
+
+    containerIdx++;
+  }
 
   auto itemToDye = std::dynamic_pointer_cast<Inventory::HousingItem>(container->getItem(slotID));
   auto dyeToUse = player.getItemAt(dyeContainerID, dyeSlotID);
 
   if (!itemToDye || !dyeToUse) return;
 
-  uint32_t stainId = dyeToUse->getAdditionalData();
+  auto offset = (containerIdx * 50) + slotID;
 
-  itemToDye->setStain(stainId);
+  // Get the color of the dye being used
+  uint32_t stainID = dyeToUse->getAdditionalData();
+
+  // Set the stain of the housing item
+  itemToDye->setStain(stainID);
   container->setItem(static_cast<uint8_t>(slotID), itemToDye);
 
+  zone->updateHousingObjectDye(offset, stainID);
+
+  // Update the color of the object on your screen (Doesn't affect any screens afterward)
   auto pDyeHousingItemPacket = makeZonePacket< Server::FFXIVIpcHousingObjectDye >(player.getId());
 
-  pDyeHousingItemPacket->data().stain = static_cast<uint8_t>(stainId);
+  pDyeHousingItemPacket->data().stain = static_cast<uint8_t>(stainID);
   pDyeHousingItemPacket->data().unknown1 = 0;
   pDyeHousingItemPacket->data().containerId = containerID;
   pDyeHousingItemPacket->data().slotId = slotID;
@@ -1241,8 +1256,8 @@ void Sapphire::World::Manager::HousingMgr::dyeInteriorItem(Entity::Player& playe
 
   player.queuePacket(pDyeHousingItemPacket);
 
-  invMgr.sendInventoryContainer(player, container);
   invMgr.saveHousingContainer(ident, container);
+  player.updateItemDb(itemToDye);
 }
 
 Sapphire::Common::HousingObject Sapphire::World::Manager::HousingMgr::getYardObjectForItem( Inventory::HousingItemPtr item ) const

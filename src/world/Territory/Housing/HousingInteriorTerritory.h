@@ -28,6 +28,7 @@ namespace Sapphire::World::Territory::Housing
     void updateHousingObjectPosition(
       Entity::Player& sourcePlayer, uint16_t slot, Sapphire::Common::FFXIVARR_POSITION3 pos, uint16_t rot );
     void removeHousingObject( uint16_t slot );
+    void updateHousingObjectDye( uint16_t slot, uint16_t stain);
 
   private:
     Common::LandIdent m_landIdent;

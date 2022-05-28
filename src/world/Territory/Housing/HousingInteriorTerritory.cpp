@@ -230,3 +230,13 @@ void Sapphire::World::Territory::Housing::HousingInteriorTerritory::removeHousin
     player.second->queuePacket( pkt );
   }
 }
+
+void Sapphire::World::Territory::Housing::HousingInteriorTerritory::updateHousingObjectDye( uint16_t slot, uint16_t stain)
+
+{
+  auto& obj = m_housingObjects[slot];
+  obj.stain = stain;
+
+  m_housingObjects[slot] = obj;
+  
+}
