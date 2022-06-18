@@ -233,7 +233,7 @@ namespace Sapphire::Network::Packets
 
     HuntingLogEntry = 0x0337, // updated 6.15
 
-    EventContinue = 0x0325, // updated 6.11a
+    EventContinue = 0x0364, // updated 6.15
 
     EventLinkshell = 0x1169,
 
@@ -405,8 +405,8 @@ namespace Sapphire::Network::Packets
     ReqCountdownInitiate = 0x0371, // updated 6.15
     ReqCountdownCancel = 0x0144, // updated 6.11a
 
-    ZoneLineHandler = 0x0376, // updated 6.11a
-    DiscoveryHandler = 0x01A5, // updated 6.11a
+    ZoneLineHandler = 0x0076, // updated 6.15
+    DiscoveryHandler = 0x00E7, // updated 6.15
 
     SkillHandler = 0x01D8, // updated 6.15
     AoESkillHandler = 0xF152, // updated 5.58 hotfix
@@ -420,17 +420,17 @@ namespace Sapphire::Network::Packets
     EmoteEventHandler = 0xF0B0, // updated 5.58 hotfix
     WithinRangeEventHandler = 0xF2B6, // updated 5.58 hotfix
     OutOfRangeEventHandler = 0xF3C5, // updated 5.58 hotfix
-    EnterTeriEventHandler = 0x02B3, // updated 6.11a
+    EnterTeriEventHandler = 0x03AE, // updated 6.15
     ShopEventHandler = 0xF19E, // updated 5.58 hotfix
 
     ReturnEventHandler = 0x0176, // updated 6.15
-    ReturnEvent16Handler = 0x033C, // updated 6.11a
+    ReturnEvent16Handler = 0x030C, // updated 6.15
     TradeReturnEventHandler = 0x00B5, // updated 6.11a
     TradeReturnEventHandler2 = 0xF388, // updated 6.08
 
-    EventYield2Handler = 0x0139, // updated 6.11a
+    EventYield2Handler = 0x0192, // updated 6.15
     EventYield16Handler = 0xF213, // updated 6.08
-    EventYield32Handler = 0x03E2, // updated 6.11a
+    EventYield32Handler = 0x0148, // updated 6.15
 
     LinkshellEventHandler = 0xF16B, // updated 4.5
     LinkshellEventHandler1 = 0xF16C, // updated 4.5
