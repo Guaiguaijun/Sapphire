@@ -1858,15 +1858,15 @@ namespace Sapphire::Network::Packets::Server
   struct FFXIVIpcHousingLandFlags : FFXIVIpcBasePacket< HousingLandFlags >
   {
     Common::LandFlagSet freeCompanyHouse; // 00
-    uint64_t unkown1;
+    uint64_t unknown1;
     Common::LandFlagSet privateHouse; // 24
-    uint64_t unkown2;
+    uint64_t unknown2;
     Common::LandFlagSet apartment; // 48
-    uint64_t unkown3;
+    uint64_t unknown3;
     Common::LandFlagSet sharedHouse[2]; //72
-    uint64_t unkown4;
-    Common::LandFlagSet unkownHouse;
-    uint64_t unkown5;
+    uint64_t unknown4;
+    Common::LandFlagSet unknownHouse;
+    uint64_t unknown5;
   };
 
   //Structs
@@ -1893,6 +1893,26 @@ namespace Sapphire::Network::Packets::Server
   {
     uint32_t price;
     uint32_t timeLeft;
+  };
+
+  /**
+  * Sent when the client clicks a housing placard
+  * to indicate if the plot is available to FCs or private housing or both,
+  * lottery or first-come-first-served, and lottery status/results
+  */
+  struct FFXIVIpcLandAvailability : FFXIVIpcBasePacket< LandAvailability >
+  {
+    Common::LandSellMode sellMode;
+    Common::LandAvailableTo availableTo;
+    Common::LandLotteryStatus lotteryStatus;
+    Common::LandLotteryPlayerResult lotteryPlayerResult;
+    uint32_t lotteryUpdateTime;
+    uint32_t refundExpiryTime;
+    uint32_t lotteryEntries;
+    uint32_t lotteryWinningNumber;
+    uint32_t lotteryPlayerNumber;
+    uint32_t refundAmount;
+    uint32_t unknown;
   };
 
   struct FFXIVIpcLandInfoSign : FFXIVIpcBasePacket< LandInfoSign >

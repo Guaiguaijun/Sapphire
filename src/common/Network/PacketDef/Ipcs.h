@@ -272,6 +272,7 @@ namespace Sapphire::Network::Packets
 
     LandSetInitialize = 0x00B1, // updated 6.18 hotfix
     LandUpdate = 0x0329, // updated 6.18 hotfix
+    LandAvailability = 0x0243, // updated 6.18 hotfix
     YardObjectSpawn = 0x0302, // updated 6.18 hotfix
     HousingIndoorInitialize = 0x02F1, // updated 6.18 hotfix
     LandPriceUpdate = 0x0338, // updated 6.18 hotfix
