@@ -4,8 +4,8 @@
 #include <stdint.h>
 
 /* This file has been automatically generated.
-Changes will be lost upon regeneration.
-To change the content edit tools/exd_common_gen */
+   Changes will be lost upon regeneration.
+   To change the content edit tools/exd_common_gen */
 namespace Sapphire::Common {
 
   ///////////////////////////////////////////////////////////
@@ -23,12 +23,14 @@ namespace Sapphire::Common {
     Event = 8,
     LimitBreak = 9,
     System = 10,
-    Artillery = 11,
+    System1 = 11,
     Mount = 12,
     Special = 13,
     ItemManipulation = 14,
-    AdrenalineRush = 15,
+    LimitBreak1 = 15,
     //1 = 16,
+    Artillery = 17,
+    //2 = 18,
   };
 
   ///////////////////////////////////////////////////////////
@@ -130,21 +132,22 @@ namespace Sapphire::Common {
   //BeastTribe.exd
   enum class BeastTribe : uint8_t
   {
-    /* = 0,
-    1 = 1,
-    2 = 2,
-    3 = 3,
-    4 = 4,
-    5 = 5,
-    6 = 6,
-    7 = 7,
-    8 = 8,
-    9 = 9,
-    10 = 10,
-    11 = 11,
-    12 = 12,
-    13 = 13,
-    14 = 14,*/
+    None = 0,
+    Amaljaa = 1,
+    Sylphs = 2,
+    Kobolds = 3,
+    Sahagin = 4,
+    Ixal = 5,
+    VanuVanu = 6,
+    Vath = 7,
+    Moogles = 8,
+    Kojin = 9,
+    Ananta = 10,
+    Namazu = 11,
+    Pixies = 12,
+    Qitari = 13,
+    Dwarves = 14,
+    Arkasodara = 15,
   };
 
   ///////////////////////////////////////////////////////////
@@ -190,8 +193,8 @@ namespace Sapphire::Common {
     Bluemage = 36,
     Gunbreaker = 37,
     Dancer = 38,
-    // = 39,
-    //1 = 40,
+    Reaper = 39,
+    Sage = 40,
   };
 
   ///////////////////////////////////////////////////////////
@@ -228,6 +231,7 @@ namespace Sapphire::Common {
     //4 = 27,
     UltimateRaids = 28,
     //5 = 29,
+    //6 = 30,
   };
 
   ///////////////////////////////////////////////////////////
@@ -249,6 +253,7 @@ namespace Sapphire::Common {
     Heavensward = 1,
     Stormblood = 2,
     Shadowbringers = 3,
+    Endwalker = 4,
   };
 
   ///////////////////////////////////////////////////////////
@@ -323,7 +328,7 @@ namespace Sapphire::Common {
     Legs = 36,
     Hands = 37,
     Feet = 38,
-    Waist = 39,
+    Unobtainable = 39,
     Necklace = 40,
     Earrings = 41,
     Bracelets = 42,
@@ -392,6 +397,8 @@ namespace Sapphire::Common {
     BlueMagesArm = 105,
     GunbreakersArm = 106,
     DancersArm = 107,
+    ReapersArm = 108,
+    SagesArm = 109,
   };
 
   ///////////////////////////////////////////////////////////
@@ -486,36 +493,37 @@ namespace Sapphire::Common {
     ScholarsArms = 85,
     GunbreakersArms = 86,
     DancersArms1 = 87,
-    /*1 = 88,
-    2 = 89,
-    3 = 90,
-    4 = 91,
-    5 = 92,
-    6 = 93,
-    7 = 94,
-    8 = 95,
-    9 = 96,
-    10 = 97,
-    11 = 98,
-    12 = 99,
-    13 = 100,*/
+    ReapersArms = 88,
+    SagesArms = 89,
+    RegistrableMiscellany = 90,
+    /*1 = 91,
+    2 = 92,
+    3 = 93,
+    4 = 94,
+    5 = 95,
+    6 = 96,
+    7 = 97,
+    8 = 98,
+    9 = 99,
+    10 = 100,*/
   };
 
   ///////////////////////////////////////////////////////////
   //OnlineStatus.exd
   enum class OnlineStatus : uint8_t
   {
-    Producer = 1,
+    None = 0,
+    GameQA = 1,
     GameMaster = 2,
     GameMaster1 = 3,
-    GameMaster2 = 4,
+    EventParticipant = 4,
     Disconnected = 5,
     WaitingforFriendListApproval = 6,
     WaitingforLinkshellApproval = 7,
     WaitingforFreeCompanyApproval = 8,
     NotFound = 9,
     Offline = 10,
-    Mentor = 11,
+    BattleMentor = 11,
     Busy = 12,
     PvP = 13,
     PlayingTripleTriad = 14,
@@ -531,7 +539,7 @@ namespace Sapphire::Common {
     SwordforHire = 24,
     WaitingforDutyFinder = 25,
     RecruitingPartyMembers = 26,
-    Mentor1 = 27,
+    Mentor = 27,
     PvEMentor = 28,
     TradeMentor = 29,
     PvPMentor = 30,
@@ -601,13 +609,15 @@ namespace Sapphire::Common {
     Gridania = 2,
     Uldah = 3,
     Ishgard = 4,
-    // = 5,
+    //= 5,
     //1 = 6,
     Kugane = 7,
     //2 = 8,
     //3 = 9,
     Crystarium = 10,
     //4 = 11,
+    OldSharlayan = 12,
+    //5 = 13,
   };
 
   ///////////////////////////////////////////////////////////
@@ -762,12 +772,29 @@ namespace Sapphire::Common {
     SpectralCurrent = 145,
     //1 = 146,
     Climactic = 147,
-    //2 = 148,
-    //3 = 149,
-    //4 = 150,
-    //5 = 151,
-    //6 = 152,
-    //7 = 153,
+    MoonDust = 148,
+    AstromagneticStorm = 149,
+    Apocalypse = 150,
+    Polarization = 151,
+    Polarization1 = 152,
+    Polarization2 = 153,
+    Polarization3 = 154,
+    Polarization4 = 155,
+    Projection = 156,
+    Pandæmonium = 157,
+    Pandæmonium1 = 158,
+    Pandæmonium2 = 159,
+    Ultimatum = 160,
+    Inevitability = 161,
+    Transcendence = 162,
+    Transcendence1 = 163,
+    Transcendence2 = 164,
+    Transcendence3 = 165,
+    Transcendence4 = 166,
+    Transcendence5 = 167,
+    Transcendence6 = 168,
+    Transcendence7 = 169,
+    Dragonstorms2 = 170,
   };
 
   ///////////////////////////////////////////////////////////
@@ -782,12 +809,12 @@ namespace Sapphire::Common {
     Tavern = 5,
     Eatery = 6,
     ImmersiveExperience = 7,
-    Cafe = 8,
+    Café = 8,
     Aquarium = 9,
     Sanctum = 10,
     Venue = 11,
     Florist = 12,
-    // = 13,
+    //= 13,
     Library = 14,
     PhotoStudio = 15,
     HauntedHouse = 16,
