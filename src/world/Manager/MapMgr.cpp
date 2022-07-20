@@ -81,7 +81,7 @@ void Sapphire::World::Manager::MapMgr::updateAll( Entity::Player& player )
 
                 eventData.iconId = exdData.get< Data::EventIconType >( 5 )->mapIconAvailable + 1;
 
-                if( player.isQuestCompleted( guildLeve->quest[ 0 ] ) ||
+                /*if (player.isQuestCompleted(guildLeve->quest[0]) ||
                     ( ( guildLeve->typeId == 2 || npcData == 393217 || npcData == 393223 || npcData == 393225 ) && // Leve npc locations: Bentbranch / Horizon / Swiftperch
                     ( player.isQuestCompleted( 220 ) || player.isQuestCompleted( 687 ) || player.isQuestCompleted( 693 ) ) ) )
                 {
@@ -103,7 +103,7 @@ void Sapphire::World::Manager::MapMgr::updateAll( Entity::Player& player )
                   {
                     mapData.insert( eventData );
                   }
-                }
+                }*/
               }              
               break;
             }
@@ -376,22 +376,22 @@ bool Sapphire::World::Manager::MapMgr::isQuestVisible( Entity::Player& player, u
 
   if( questPtr->classJobUnlock )
   {
-    if( questPtr->classJobUnlockFlag == 3 )
+    /*if( questPtr->classJobUnlockFlag == 3 )
       if( static_cast< uint8_t >( player.getClass() ) != questPtr->classJobUnlock )
         return false;
     else if( questPtr->classJobUnlockFlag == 4 )
       if ( static_cast< uint8_t >( player.getClass() ) == questPtr->classJobUnlock )
         return false;
     else
-      return false;
+      return false;*/
   }
 
   // Was this really ever used?
-  if( questPtr->startTown )
+  /*if( questPtr->startTown )
   {
     if( questPtr->startTown != player.getStartTown() )
       return false;
-  }
+  }*/
 
   if( Common::CURRENT_EXPANSION_ID < questPtr->expansion )
     return false;
@@ -414,7 +414,7 @@ bool Sapphire::World::Manager::MapMgr::isQuestVisible( Entity::Player& player, u
       return false;
   }
 
-  if( questPtr->previousQuestJoin == 1 )
+  /*if( questPtr->previousQuestJoin == 1 )
   {
     for( int32_t i = 0; i < 3; i++ )
     {
@@ -448,7 +448,7 @@ bool Sapphire::World::Manager::MapMgr::isQuestVisible( Entity::Player& player, u
       if( player.isQuestCompleted( questPtr->previousQuest[ i ] ) )
         break;
     }
-  }
+  }*/
 
   if( questPtr->questLockJoin == 1 )
   {
