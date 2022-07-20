@@ -456,23 +456,24 @@ namespace Sapphire::Network::Packets::Server
   struct FFXIVIpcEffectResult : FFXIVIpcBasePacket< EffectResult >
   {
     uint32_t globalSequence;
+    uint32_t unknown1;
     uint32_t actor_id;
     uint32_t current_hp;
     uint32_t max_hp;
     uint16_t current_mp;
-    uint8_t unknown1;
+    uint8_t unknown2;
     uint8_t classId;
     uint8_t shieldPercentage;
     uint8_t entryCount;
-    uint16_t unknown2;
+    uint16_t unknown3;
 
     struct StatusEntry
     {
       uint8_t index; // which position do i display this
-      uint8_t unknown3;
+      uint8_t unknown4;
       uint16_t id;
       uint16_t param;
-      uint16_t unknown4;    // Sort this out (old right half of power/param property)
+      uint16_t unknown5;    // Sort this out (old right half of power/param property)
       float duration;
       uint32_t sourceActorId;
     } statusEntries[4];
@@ -572,7 +573,7 @@ namespace Sapphire::Network::Packets::Server
 
     uint16_t padding_22[3];
 
-    uint8_t effects[8*8];
+    uint8_t effects[65];
 
     uint16_t padding_6A[3];
 
