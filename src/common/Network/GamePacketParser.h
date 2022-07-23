@@ -18,6 +18,14 @@ namespace Sapphire::Network::Packets
       Malformed
   };
 
+  /// The compression method used on this packet's payload.
+  enum CompressionType
+  {
+    NoCompression,
+    Zlib,
+    Oodle,
+  };
+
   /// Read packet header from buffer with given offset.
   /// Buffer with given offset must be pointing to start of the new FFXIV packet.
   PacketParseResult getHeader( const std::vector< uint8_t >& buffer, const uint32_t offset,
