@@ -420,13 +420,13 @@ namespace Sapphire::Network::Packets
     InventoryEquipRecommendedItems = 0x018A, // updated 6.18 hotfix
 
     ReqPlaceHousingItem = 0x03D8, // updated 6.18 hotfix
-    BuildPresetHandler = 0xF24D, // updated 6.11a
+    BuildPresetHandler = 0x036F, // updated 6.18 hotfix
 
     TalkEventHandler = 0x00F0, // updated 6.18 hotfix
     EmoteEventHandler = 0xF0B0, // updated 5.58 hotfix
     WithinRangeEventHandler = 0xF2B6, // updated 5.58 hotfix
     OutOfRangeEventHandler = 0xF3C5, // updated 5.58 hotfix
-    EnterTeriEventHandler = 0x03AE, // updated 6.15
+    EnterTeriEventHandler = 0x026F, // updated 6.18 hotfix
     ShopEventHandler = 0xF19E, // updated 5.58 hotfix
 
     ReturnEventHandler = 0x00E7, // updated 6.18 hotfix
