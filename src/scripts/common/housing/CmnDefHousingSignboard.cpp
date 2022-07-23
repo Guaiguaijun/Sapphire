@@ -2,9 +2,11 @@
 #include <Actor/Player.h>
 #include <Territory/HousingZone.h>
 #include <Manager/HousingMgr.h>
+#include <Network/PacketDef/Zone/ServerZoneDef.h>
 #include <Network/PacketWrappers/ActorControlSelfPacket.h>
 #include <Network/CommonActorControl.h>
 #include <Exd/ExdDataGenerated.h>
+#include <Common.h>
 #include <Service.h>
 
 
@@ -84,6 +86,10 @@ public:
 
   void onTalk( uint32_t eventId, Entity::Player& player, uint64_t actorId ) override
   {
+    // maybe not the best place to put this, but it's most likely where it goes on retail
+    auto& pHouMgr = Common::Service< HousingMgr >::ref();
+    pHouMgr.sendLandAvailability( player, player.getActiveLand() );
+
     Scene00000( player );
   }
 };
