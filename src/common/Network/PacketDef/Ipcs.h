@@ -422,7 +422,7 @@ namespace Sapphire::Network::Packets
     EmoteEventHandler = 0xF0B0, // updated 5.58 hotfix
     WithinRangeEventHandler = 0xF2B6, // updated 5.58 hotfix
     OutOfRangeEventHandler = 0xF3C5, // updated 5.58 hotfix
-    EnterTeriEventHandler = 0x03AE, // updated 6.15
+    EnterTeriEventHandler = 0x0332, // updated 6.30h
     ShopEventHandler = 0xF19E, // updated 5.58 hotfix
 
     ReturnEventHandler = 0x0383, // updated 6.30h
