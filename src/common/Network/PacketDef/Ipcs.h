@@ -354,13 +354,13 @@ namespace Sapphire::Network::Packets
     LogoutHandler = 0x01C7, // updated 6.30h
     CancelLogout = 0x0102, // updated 6.30h
 
-    UpdatePositionHandler = 0x02D9, // Updated 6.18 hotfix
+    UpdatePositionHandler = 0x10F, // Updated for 6.30h
     ClientTrigger = 0x0174, // updated 6.30h
-    ChatHandler = 0x011E, // Updated 6.18 hotfix
+    ChatHandler = 0x02C6, // Updated 6.30h
     SetSearchInfoHandler = 0x0212, // Updated 6.18 hotfix
     MarketBoardPurchaseHandler = 0x00EB, // Updated 6.18 hotfix
     InventoryModifyHandler = 0x0095, // Updated 6.18 hotfix (Base offset: 0x009C)
-    UpdatePositionInstance = 0x0131, // Updated 6.18 hotfix
+    UpdatePositionInstance = 0x00DB, // Updated for 6.30h
     PlaceFieldMarker = 0x38e, // updated 6.30h
     PlaceFieldMarkerPreset = 0x204, // updated 6.30h
 
@@ -407,10 +407,10 @@ namespace Sapphire::Network::Packets
     ReqCountdownInitiate = 0x0371, // updated 6.18 hotfix
     ReqCountdownCancel = 0x0112, // updated 6.18 hotfix
 
-    ZoneLineHandler = 0x0222, // updated 6.18 hotfix
+    ZoneLineHandler = 0x01EC, // updated 6.30h
     DiscoveryHandler = 0x0110, // updated 6.18 hotfix
 
-    SkillHandler = 0x0088, // updated 6.18 hotfix
+    SkillHandler = 0x0249, // updated 6.30h 
     AoESkillHandler = 0xF152, // updated 5.58 hotfix
 
     InventoryEquipRecommendedItems = 0x018A, // updated 6.18 hotfix
@@ -418,7 +418,7 @@ namespace Sapphire::Network::Packets
     ReqPlaceHousingItem = 0x03D8, // updated 6.18 hotfix
     BuildPresetHandler = 0xF24D, // updated 6.11a
 
-    TalkEventHandler = 0x00F0, // updated 6.18 hotfix
+    TalkEventHandler = 0x0384, // updated 6.30h
     EmoteEventHandler = 0xF0B0, // updated 5.58 hotfix
     WithinRangeEventHandler = 0xF2B6, // updated 5.58 hotfix
     OutOfRangeEventHandler = 0xF3C5, // updated 5.58 hotfix
@@ -437,7 +437,7 @@ namespace Sapphire::Network::Packets
     LinkshellEventHandler = 0xF16B, // updated 4.5
     LinkshellEventHandler1 = 0xF16C, // updated 4.5
 
-    ReqEquipDisplayFlagsChange = 0x02EE, // updated 6.18 hotfix
+    ReqEquipDisplayFlagsChange = 0x03BC, // updated 6.30h
 
     LandRenameHandler = 0x00DB, // updated 6.18 hotfix
     HousingUpdateHouseGreeting = 0x0101, // updated 6.18 hotfix
@@ -450,7 +450,7 @@ namespace Sapphire::Network::Packets
     PerformNoteHandler = 0xF243, // updated 5.58 hotfix
 
     WorldInteractionHandler = 0x0096, // updated 6.18 hotfix
-    Dive = 0x0240, // updated 6.18 hotfix
+    Dive = 0x018C, // updated 6.30h
   };
 
   ////////////////////////////////////////////////////////////////////////////////
