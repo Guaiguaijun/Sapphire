@@ -149,7 +149,7 @@ namespace Sapphire::Network::Packets
 
     PlayerAddedToBlacklist = 0x399, // updated 6.30h
     PlayerRemovedFromBlacklist = 0x1dc, // updated 6.30h
-    BlackList = 0xF16B, // updated 6.30h (may be wrong)
+    BlackList = 0xF16B, // updated 6.30h
 
     LinkshellList = 0x1e2, // updated 6.30h
     CrossWorldLinkshellList = 0x01A1, // updated 6.18 hotfix
@@ -347,7 +347,7 @@ namespace Sapphire::Network::Packets
     InitHandler = 0x01F0, // updated 6.30h
     FinishLoadingHandler = 0x01E4, // updated 6.30h
     SocialListHandler = 0x0145, // updated 6.30h
-    BlackListHandler = 0xF235, // updated 6.30h (May Be Wrong)
+    BlackListHandler = 0x0235, // updated 6.30h
     LinkshellListHandler = 0xF39D, // updated 6.11
     MarketBoardSearch = 0xF183, // updated 6.11a
 
@@ -359,7 +359,7 @@ namespace Sapphire::Network::Packets
     ChatHandler = 0x02C6, // Updated 6.30h
     SetSearchInfoHandler = 0x0212, // Updated 6.18 hotfix
     MarketBoardPurchaseHandler = 0x00EB, // Updated 6.18 hotfix
-    InventoryModifyHandler = 0x0095, // Updated 6.18 hotfix (Base offset: 0x009C)
+    InventoryModifyHandler = 0x008F, // Updated 6.30h
     UpdatePositionInstance = 0x00DB, // Updated for 6.30h
     PlaceFieldMarker = 0x38e, // updated 6.30h
     PlaceFieldMarkerPreset = 0x204, // updated 6.30h
